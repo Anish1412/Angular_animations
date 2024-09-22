@@ -1,0 +1,45 @@
+<h1>My Courses</h1>
+
+<div class="row">
+    <div class="col-md-12">
+        <button type="button" class="btn btn-info" (click)="openCourse()">Add Course</button>
+    </div>
+</div>
+
+<div class="row overflow-hidden">
+    <div class="col-md-12">
+        <app-new-course @newCourseState *ngIf="createNewCourse" (addNewCourse)="addCourse($event)" (courseCancel)="cancelCourse()"></app-new-course>
+    </div>
+</div>
+
+<app-spinner *ngIf="coursesLoaded"></app-spinner>
+
+
+<!-- ******************** With Angular Animation Callback ********************* -->
+<!-- Angular Animations callbacks using 'start' & 'done' phasenames for creating staggered list -->
+<!-- 1) TriggerStateName should be there along with angular animation callback else, it will not work -->
+<!-- For e.g. @courseTransition (@courseTransition.done)="onCourseAddDone($event,i)" -->
+<!-- 2) You should use ':enter' & ':leave' stateNames triggerState on the element where exact 
+    functioning is going on like *ngFor & *ngIf -->
+
+    <!-- <app-course [@courseTransition]="createNewCourse ? 'slideDown':'slideUp'" 
+    (@courseTransition.done)="onCourseAddDone($event,i)" 
+    *ngFor="let course of displayedCourses; let i=index" 
+    [course]="course"
+    (updateStatus)="updateStatus($event,i)"
+    (deleteCourse)="deleteCourse(i)"
+    ></app-course> -->
+<!-- ******************** With Angular Animation Callback ********************* -->
+
+
+<!-- ******************** Without Angular Animation Callback (using Stagger option) ********************* -->
+<div [@staggerState]="courses.length">
+<app-course [@courseTransition]="createNewCourse ? 'slideDown':'slideUp'" 
+    *ngFor="let course of courses; let i=index" 
+    [@staggerState]
+    [course]="course"
+    (updateStatus)="updateStatus($event,i)"
+    (deleteCourse)="deleteCourse(i)"
+    ></app-course>
+</div>
+<!-- ******************** Without Angular Animation Callback (using Stagger option) ********************* -->

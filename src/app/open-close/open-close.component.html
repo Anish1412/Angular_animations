@@ -1,0 +1,4 @@
+<button type="button" class="btn btn-primary m-2" (click)="changeState()">Toggle</button>
+<div class="box" [@clickedBox]="isOpen ? 'openBox':'closeBox'">
+    <h3 class="p-4">The Box is {{ isOpen ? 'Open': 'Close'}}</h3>
+</div>

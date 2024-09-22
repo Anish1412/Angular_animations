@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-10">
+        <form [formGroup]="newCourse" (ngSubmit)="addCourse()" [@courseFormState]="newCourse.value">
+            <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" id="name" formControlName="title" />
+                <small class="text-danger" *ngIf="newCourse.get('name')?.touched && newCourse.get('name')?.invalid">Enter name here...</small>
+            </div>
+            <div class="form-group">
+                <label for="description" class="form-label">Description</label>
+                <input type="text" class="form-control" name="description" id="description" formControlName="description" />
+                <small class="text-danger" *ngIf="newCourse.get('description')?.touched && newCourse.get('description')?.invalid">Enter description here...</small>
+            </div>
+            <div class="form-group">
+                <label for="status" class="form-label">Status</label>
+                <select name="status" class="form-select" id="status" formControlName="status">
+                    <option value="" selected>Select Status</option>
+                    <option [value]="status" *ngFor="let status of statuses">{{ status }}</option>
+                </select>
+                <small class="text-danger" *ngIf="newCourse.get('status')?.touched && newCourse.get('status')?.invalid">Enter status here...</small>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="submit" [@buttonState]="newCourse.valid ? 'valid':'invalid'" class="btn btn-primary m-2" [disabled]="!newCourse.valid">Create Course</button>
+                    <button type="reset" class="btn btn-danger" (click)="onCourseCancel()">Cancel</button>
+                </div>
+            </div>
+        </form>
+        <p>{{ newCourse.get('name')?.value }}</p>
+    </div>
+</div>

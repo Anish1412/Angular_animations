@@ -1,0 +1,66 @@
+/* :host {
+    display: inline-block;
+    width: 18rem;
+    border: 4px solid black;
+    margin: 1.2rem;
+    text-align: center;
+} */
+
+/* :host(.active) {
+    border-color:red;
+} */
+
+/* ******* Emulated ShadowDOM ******* */
+/* :host {
+    display: block;
+    border: 1px solid black;
+} */
+/* ******* Emulated ShadowDOM ******* */
+
+/* ****** :host() selector && ::ng-deep ****** */
+/* :host(.is-Active1) {
+    background-color: blue;
+}
+
+:host(.is-Active2) {
+    background-color: red;
+} */
+
+/* ******* Emulated ShadowDOM ******* */
+/* :host ::ng-deep h3 {
+    color: white;
+} */
+/* ******* Emulated ShadowDOM ******* */
+/* ****** :host() selector && ::ng-deep ****** */
+
+
+/* ****** :host-context() selector ****** */
+/* ******* Emulated ShadowDOM ******* */
+/* :host-context(.content1) {
+    background-color: blue;
+}
+:host-context(.content1) h2 {
+    color: red;
+}
+
+:host-context(.content2) {
+    background-color: red;
+} */
+/* ******* Emulated ShadowDOM ******* */
+/* ****** :host-context() selector ****** */
+
+
+
+/* ******* Emulated ShadowDOM *******  */
+/* .orange {
+    background-color: orange;
+}
+
+h1,h2 {
+    color: white;
+} */
+/* ******* Emulated ShadowDOM *******  */
+
+:host {
+    display: block;
+}

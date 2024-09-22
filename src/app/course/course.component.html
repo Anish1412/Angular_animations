@@ -1,0 +1,30 @@
+<!-- <h3>{{ course.title }}</h3> -->
+
+<!-- ******* Emulated ShadowDOM ******* -->
+<!-- <h1>Leela Web Dev</h1>
+<div class="orange">
+    <ng-content></ng-content>
+</div>
+<app-author></app-author> -->
+<!-- ******* Emulated ShadowDOM ******* -->
+
+
+<div class="row">
+    <div class="card my-3 col-md-12 p-3" [@selectedCard]="isCardSelected ? 'select':'unselect'" (click)="cardSelect()">
+        <h2>{{ course?.title }} <span class="badge" [ngClass]="badgeColor()">{{ course?.status }}</span> </h2> <hr/>
+        <h5 class="mb-2">{{ course?.description }}</h5>
+        <div class="row">
+            <div class="col-md-5">
+                <select class="form-select" #status aria-label="Default select example">
+                    <option value="active">Active</option>
+                    <option value="inactive">In-Active</option>
+                    <option value="draft">Draft</option>
+                  </select>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-primary mx-1" (click)="editStatus()">Update Status</button>
+                <button type="button" class="btn btn-danger" (click)="removeCourse()">Delete Course</button>
+            </div>
+        </div>
+    </div>
+</div>

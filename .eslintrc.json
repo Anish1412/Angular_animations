@@ -1,0 +1,41 @@
+{
+    "env": {
+        "browser": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "airbnb-base"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint",
+        "promise"
+    ],
+    "rules": {
+        "no-sparse-arrays":"error",
+        "no-console":"warn",
+        "find-payment":"warn",
+        "promise/catch-or-return": "error",
+        "no-undefined":"error",
+        "no-var":"error",
+        "eqeqeq":"error",
+        "indent": [
+            "warn",
+            2
+        ],
+
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
+    }
+}

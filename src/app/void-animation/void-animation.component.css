@@ -1,0 +1,9 @@
+.box,.shrink,.element {
+    background-color: lightblue;
+    border: 1px solid black;
+}
+
+.shrink {
+    padding: 15px;
+    font-weight: bold;
+}

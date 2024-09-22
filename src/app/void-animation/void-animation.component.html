@@ -1,0 +1,13 @@
+<button type="button" class="btn btn-primary m-2" (click)="changeState()">Toggle Content</button>
+<!-- If there are no states in the trigger function then, we didn't have to bind it's name in square bracket([]) -->
+<div class="box" *ngIf="showElement" @conditionAnimation>
+    <h3 class="p-4">Now you can see the Content</h3>
+</div>
+
+<button type="button" class="btn btn-primary" (click)="shrinkWidth()">Shrink me</button>
+<button type="button" class="btn btn-primary mx-2" (click)="animateMe()">Animate me</button>
+<!-- You have to give any random statename else it will not work here -->
+<p class="shrink" [ngStyle]="{ 'width.px': this.width }" [@shrinkAnimation]="animate ? 'shrink':'noshrink'">Shrink me</p>
+
+<button type="button" class="btn btn-primary my-1" (click)="addListItems()">Add listItems</button>
+<p @listAnimation class="element px-2" *ngFor="let item of listItems">{{ item }}</p>

@@ -1,0 +1,19 @@
+<button type="button" class="btn btn-primary m-2" (click)="toShowCard()">Show Card</button>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <div class="card w-75" [@cardState]="isShowParagraph" *ngIf="isCardVisible">
+          <div class="card-header">This is the card header</div>
+          <div class="card-body">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ullam similique
+            laudantium eveniet aspernatur facere tempore corrupti a suscipit ea
+            repudiandae, nesciunt iusto. Fuga, odit. Nihil voluptate at, veritatis saepe
+            ipsam libero consectetur quos, culpa nobis deserunt esse illum dolore quidem
+            sunt sapiente unde excepturi, distinctio atque blanditiis quod magnam!</p>
+            <p *ngIf="isShowParagraph">This is a text paragraph</p>
+            <button type="button" class="btn btn-primary" (click)="showParaGraph()">Show paragraph</button>
+          </div>
+          <div class="card-footer">This is the card footer</div>
+        </div>
+    </div>
+</div>
